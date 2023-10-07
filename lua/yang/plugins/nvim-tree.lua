@@ -7,7 +7,7 @@ return {
     keys = {
         {
             "<leader>e",
-            function() require("nvim-tree") end,
+            function() require("nvim-tree") end, -- need the require("") here so that the desc shows up in which-key prompts
             desc = "File exploreer",
         },
         {
