@@ -1,4 +1,3 @@
-
 -- center the cursor to middle of screen when scrolling up and down:
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
@@ -8,23 +7,45 @@ vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]]) -- yank to end of line, Y is equivalent to y$
 vim.keymap.set("n", "<leader>p", [["+p]]) -- paste from system clipboard
 
+-- delete single character without copying into register
+vim.keymap.set("n", "x", '"_x')
+
 -- use jk to exit insert mode
 vim.keymap.set("i", "jk", "<ESC>")
 
 -- clear search highlights
 vim.keymap.set("n", "<leader>nh", ":nohl<CR>")
 
--- delete single character without copying into register
-vim.keymap.set("n", "x", '"_x')
 
--- window management
-vim.keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
-vim.keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
-vim.keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width & height
-vim.keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
+local wk = require("which-key")
+wk.register({
+  ["<leader>t"] = {
+    name = "Tabs",
+    o = { ":tabnew<cr>", "Open new tab" },
+    x = { ":tabclose<cr>", "Close current tab" },
+    n = { ":tabn<cr>", "Go to next tab" },
+    p = { ":tabp<cr>", "Go to previous tab" },
+  },
+})
 
-vim.keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
-vim.keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
-vim.keymap.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
-vim.keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
+wk.register({
+  ["<leader>s"] = {
+    name = "Splits/window",
+    v = { "<C-w>v", "Split vertically" },
+    h = { "<C-w>s", "Split horizontally" },
+    e = { "<C-w>=", "Equalize all width and height" },
+    x = { ":close<cr>", "Close current split window" },
+    m = { ":MaximizerToggle<cr>", "Maximize current window" },
+  },
+})
+
+wk.register({
+  ["<leader>g"] = {
+    name = "Telescope Git",
+    c = { "<cmd>Telescope git_commits<cr>",  "Git commits" },
+    f = { "<cmd>Telescope git_bcommits<cr>", "Git file commits for current file/buffer" },
+    b = { "<cmd>Telescope git_branches<cr>", "Git branches" },
+    s = { "<cmd>Telescope git_status<cr>",   "Git status per file with diff preview" },
+  },
+})
 
