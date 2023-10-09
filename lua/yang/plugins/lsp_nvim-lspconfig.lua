@@ -77,7 +77,7 @@ return {
             on_attach = on_attach,
         })
 
-        -- configure bash server
+        -- configure bash server (need nodejs version 18+, I used sudo snap install node --classic)
         lspconfig["bashls"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
