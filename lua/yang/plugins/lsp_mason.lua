@@ -28,6 +28,7 @@ return {
             -- list of servers for mason to install
             ensure_installed = {
                 "bashls",
+                "clangd",
                 "tsserver",
                 "html",
                 "cssls",
@@ -51,6 +52,7 @@ return {
                 "black", -- python formatter
                 "pylint", -- python linter
                 "eslint_d", -- js linter
+                "clang-format",
             },
         })
     end,
