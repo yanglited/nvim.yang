@@ -14,8 +14,7 @@ vim.keymap.set("n", "x", '"_x')
 vim.keymap.set("i", "jk", "<ESC>")
 
 -- clear search highlights
-vim.keymap.set("n", "<leader>nh", ":nohl<CR>")
-
+vim.keymap.set("n", "<Esc>", ":nohl<CR>")
 
 local wk = require("which-key")
 wk.register({
