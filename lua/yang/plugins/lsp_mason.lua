@@ -30,6 +30,7 @@ return {
                 "bashls",
                 "clangd",
                 "dockerls",
+                "docker_compose_language_service",
                 "tsserver",
                 "html",
                 "cssls",

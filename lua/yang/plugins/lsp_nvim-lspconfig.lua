@@ -76,6 +76,11 @@ return {
             on_attach = on_attach,
         })
 
+        lspconfig["docker_compose_language_service"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
+
         -- configure lua server (with special settings)
         lspconfig["lua_ls"].setup({
             capabilities = capabilities,
