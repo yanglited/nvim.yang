@@ -29,6 +29,7 @@ return {
             ensure_installed = {
                 "bashls",
                 "clangd",
+                "dockerls",
                 "tsserver",
                 "html",
                 "cssls",
