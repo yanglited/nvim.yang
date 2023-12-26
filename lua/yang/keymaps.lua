@@ -6,6 +6,7 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]]) -- yank to end of line, Y is equivalent to y$
 vim.keymap.set("n", "<leader>p", [["+p]]) -- paste from system clipboard
+vim.keymap.set("n", "<leader>P", [["+P]]) -- paste from system clipboard
 
 -- delete single character without copying into register
 vim.keymap.set("n", "x", '"_x')
