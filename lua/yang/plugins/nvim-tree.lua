@@ -4,39 +4,18 @@ return {
     dependencies = {
         "nvim-tree/nvim-web-devicons"
     },
-    keys = {
-        {
-            "<leader>e",
-            function() require("nvim-tree") end, -- need the require("") here so that the desc shows up in which-key prompts
-            desc = "File exploreer",
-        },
-        {
-            "<leader>ee",
-            "<cmd>NvimTreeFocus<CR>",
-            desc = "Focus on explore",
-        },
-        {
-            "<leader>ef",
-            "<cmd>NvimTreeFindFile<CR>",
-            desc = "Focus on current file",
-        },
-        {
-            "<leader>er",
-             "<cmd>NvimTreeRefresh<CR>",
-             desc = "Refresh file explorer",
-        },
-        {
-            "<leader>ec",
-            "<cmd>NvimTreeCollapse<CR>",
-            desc = "Collapse file explore",
-        },
-        {
-            "<leader>et",
-            "<cmd>NvimTreeToggle<CR>",
-            desc = "Toggle file explore",
-        },
-    },
     config = function()
+        local wk = require("which-key")
+        wk.register({
+            ["<leader>e"] = {
+                name = "File explorer",
+                e = {":NvimTreeFocus<cr>",    "Focus on file explorer"},
+                f = {":NvimTreeFindFile<cr>", "Focus on current file"},
+                c = {":NvimTreeCollapse<cr>", "Collapse fire explorer"},
+                r = {":NvimTreeRefresh<cr>",  "Refresh file explorer"},
+                t = {":NvimTreeToggle<cr>",   "Toggle file explorer"},
+            }
+        })
         local nvimtree = require("nvim-tree")
 
         -- recommended settings from nvim-tree documentation
