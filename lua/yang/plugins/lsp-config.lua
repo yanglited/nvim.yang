@@ -16,6 +16,7 @@ return {
                     "dockerls",
                     "docker_compose_language_service",
                     "pyright",
+                    "texlab",
                 },
             })
         end
@@ -31,6 +32,7 @@ return {
                     "isort",
                     "beautysh",
                     "cmakelang",
+                    "latexindent",
                 },
             })
         end
@@ -117,6 +119,10 @@ return {
                 on_attach = on_attach,
             })
             lspconfig["pyright"].setup({
+                capabilities = capabilities,
+                on_attach = on_attach,
+            })
+            lspconfig["texlab"].setup({
                 capabilities = capabilities,
                 on_attach = on_attach,
             })
