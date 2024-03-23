@@ -11,7 +11,7 @@ return {
                 null_ls.builtins.formatting.black, -- python
                 null_ls.builtins.formatting.isort, -- python imports
                 null_ls.builtins.formatting.clang_format, -- c/c++
-                null_ls.builtins.formatting.beautysh, -- bash/zsh etc.
+                null_ls.builtins.formatting.shellharden, -- bash
                 null_ls.builtins.formatting.cmake_format, -- cmake
             },
         })

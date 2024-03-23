@@ -30,7 +30,7 @@ return {
                     "clang-format",
                     "black",
                     "isort",
-                    "beautysh",
+                    "shellharden",
                     "cmakelang",
                     "latexindent",
                 },

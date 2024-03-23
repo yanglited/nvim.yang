@@ -21,7 +21,7 @@ tell_joke() {
     joke=${jokes[random_index]}
     
     # Print the joke
-    echo $joke
+    echo "$joke"
 }
 
 # Main function
