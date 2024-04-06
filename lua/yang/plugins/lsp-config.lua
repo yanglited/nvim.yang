@@ -73,6 +73,10 @@ return {
                         d = { ":Telescope lsp_definitions<CR>", "Show lsp definitions", opts },
                         i = { ":Telescope lsp_implementations<CR>", "Show lsp implementations", opts },
                         t = { ":Telescope lsp_type_definitions<CR>", "Show lsp type definitions", opts },
+                        c = { ":Telescope lsp_incomming_calls<CR>", "Show incoming calls", opts },
+                        o = { ":Telescope lsp_outgoing_calls<CR>", "Show outgoing calls", opts },
+                        s = { ":Telescope lsp_dynamic_workspace_symbols<CR>", "Show dynamic workspace symbols", opts },
+                        w = { ":Telescope lsp_workspace_symbols<CR>", "Show workspace symbols", opts },
                     },
                 })
             end
