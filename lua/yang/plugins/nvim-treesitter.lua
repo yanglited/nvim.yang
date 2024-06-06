@@ -12,10 +12,12 @@ return {
             local treesitter = require("nvim-treesitter.configs")
 
             -- configure treesitter
-            treesitter.setup({ -- enable syntax highlighting
+            treesitter.setup({
+                -- enable syntax highlighting
                 highlight = {
                     enable = true,
                 },
+                -- auto install
                 auto_install = true,
                 -- enable indentation
                 indent = { enable = true },
@@ -46,8 +48,9 @@ return {
                     "svelte",
                     "graphql",
                     "vim",
-                    "gitignore",
+                    "vimdoc",
                     "query",
+                    "gitignore",
                 },
                 incremental_selection = {
                     enable = true,
