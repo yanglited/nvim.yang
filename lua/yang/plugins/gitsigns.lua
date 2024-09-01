@@ -6,15 +6,13 @@ return {
         local gitsigns = require("gitsigns")
         gitsigns.setup()
         local wk = require("which-key")
-        wk.register({
-            ["<leader>G"] = {
-                name = "Gitsigns...",
-                n = { ":Gitsigns next_hunk<cr>", "Next hunk" },
-                p = { ":Gitsigns prev_hunk<cr>", "Prev hunk" },
-                b = { ":Gitsigns blame_line<cr>", "Blame line" },
-                d = { ":Gitsigns diffthis<cr>", "Diff this" },
-                r = { ":Gitsigns refresh<cr>", "Refresh" },
-            },
+        wk.add({
+            { "<leader>G", group = "Gitsigns..." },
+            { "<leader>Gb", ":Gitsigns blame_line<cr>", desc = "Blame line" },
+            { "<leader>Gd", ":Gitsigns diffthis<cr>", desc = "Diff this" },
+            { "<leader>Gn", ":Gitsigns next_hunk<cr>", desc = "Next hunk" },
+            { "<leader>Gp", ":Gitsigns prev_hunk<cr>", desc = "Prev hunk" },
+            { "<leader>Gr", ":Gitsigns refresh<cr>", desc = "Refresh" },
         })
     end,
 }

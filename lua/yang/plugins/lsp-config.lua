@@ -55,29 +55,25 @@ return {
                 opts.buffer = bufnr
 
                 local wk = require("which-key")
-                wk.register({
-                    ["<leader>c"] = {
-                        name = "Code related",
-                        a = { vim.lsp.buf.code_action,   "See code actions", opts },
-                        c = { vim.lsp.buf.hover,         "Show doc for what is under cursor", opts },
-                        r = { vim.lsp.buf.rename,        "Smart rename", opts },
-                        l = { vim.lsp.buf.declaration,   "Show declaration", opts },
-                        d = { vim.diagnostic.open_float, "Show line diagnostic", opts },
-                        p = { vim.diagnostic.goto_prev,  "Previous Diagnostic", opts },
-                        n = { vim.diagnostic.goto_next,  "Next Diagnostic", opts },
-                        D = { ":Telescope diagnostics bufnr=0<CR>", "Show buffer diagnostics", opts },
-                    },
-                    ["<leader>l"] = {
-                        name = "Lsp related",
-                        r = { ":Telescope lsp_references<CR>",  "Show lsp references", opts },
-                        d = { ":Telescope lsp_definitions<CR>", "Show lsp definitions", opts },
-                        i = { ":Telescope lsp_implementations<CR>", "Show lsp implementations", opts },
-                        t = { ":Telescope lsp_type_definitions<CR>", "Show lsp type definitions", opts },
-                        c = { ":Telescope lsp_incomming_calls<CR>", "Show incoming calls", opts },
-                        o = { ":Telescope lsp_outgoing_calls<CR>", "Show outgoing calls", opts },
-                        s = { ":Telescope lsp_dynamic_workspace_symbols<CR>", "Show dynamic workspace symbols", opts },
-                        w = { ":Telescope lsp_workspace_symbols<CR>", "Show workspace symbols", opts },
-                    },
+                wk.add({
+                    { "<leader>c", group = "Code related" },
+                    { "<leader>cD", ":Telescope diagnostics bufnr=0<CR>", desc = "Show buffer diagnostics" },
+                    { "<leader>ca", vim.lsp.buf.code_action, desc = "See code actions" },
+                    { "<leader>cc", vim.lsp.buf.hover, desc = "Show doc for what is under cursor" },
+                    { "<leader>cd", vim.diagnostic.open_float, desc = "Show line diagnostic" },
+                    { "<leader>cl", vim.lsp.buf.declaration, desc = "Show declaration" },
+                    { "<leader>cn", vim.diagnostic.goto_next, desc = "Next Diagnostic" },
+                    { "<leader>cp", vim.diagnostic.goto_prev, desc = "Previous Diagnostic" },
+                    { "<leader>cr", vim.lsp.buf.rename, desc = "Smart rename" },
+                    { "<leader>l", group = "Lsp related" },
+                    { "<leader>lc", ":Telescope lsp_incomming_calls<CR>", desc = "Show incoming calls" },
+                    { "<leader>ld", ":Telescope lsp_definitions<CR>", desc = "Show lsp definitions" },
+                    { "<leader>li", ":Telescope lsp_implementations<CR>", desc = "Show lsp implementations" },
+                    { "<leader>lo", ":Telescope lsp_outgoing_calls<CR>", desc = "Show outgoing calls" },
+                    { "<leader>lr", ":Telescope lsp_references<CR>", desc = "Show lsp references" },
+                    { "<leader>ls", ":Telescope lsp_dynamic_workspace_symbols<CR>", desc = "Show dynamic workspace symbols" },
+                    { "<leader>lt", ":Telescope lsp_type_definitions<CR>", desc = "Show lsp type definitions" },
+                    { "<leader>lw", ":Telescope lsp_workspace_symbols<CR>", desc = "Show workspace symbols" },
                 })
             end
             -- configure lua server (with special settings)

@@ -6,15 +6,13 @@ return {
     },
     config = function()
         local wk = require("which-key")
-        wk.register({
-            ["<leader>e"] = {
-                name = "File explorer",
-                e = {":NvimTreeFocus<cr>",    "Focus on file explorer"},
-                f = {":NvimTreeFindFile<cr>", "Focus on current file"},
-                c = {":NvimTreeCollapse<cr>", "Collapse fire explorer"},
-                r = {":NvimTreeRefresh<cr>",  "Refresh file explorer"},
-                t = {":NvimTreeToggle<cr>",   "Toggle file explorer"},
-            }
+        wk.add({
+            { "<leader>e", group = "File explorer" },
+            { "<leader>ec", ":NvimTreeCollapse<cr>", desc = "Collapse fire explorer" },
+            { "<leader>ee", ":NvimTreeFocus<cr>", desc = "Focus on file explorer" },
+            { "<leader>ef", ":NvimTreeFindFile<cr>", desc = "Focus on current file" },
+            { "<leader>er", ":NvimTreeRefresh<cr>", desc = "Refresh file explorer" },
+            { "<leader>et", ":NvimTreeToggle<cr>", desc = "Toggle file explorer" },
         })
         local nvimtree = require("nvim-tree")
 

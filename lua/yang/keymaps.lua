@@ -20,34 +20,28 @@ vim.keymap.set("i", "jk", "<ESC>")
 vim.keymap.set("n", "<Esc>", ":nohl<CR>")
 
 local wk = require("which-key")
-wk.register({
-  ["<leader>t"] = {
-    name = "Tabs",
-    o = { ":tabnew<cr>", "Open new tab" },
-    x = { ":tabclose<cr>", "Close current tab" },
-    n = { ":tabn<cr>", "Go to next tab" },
-    p = { ":tabp<cr>", "Go to previous tab" },
-  },
+wk.add({
+    { "<leader>t", group = "Tabs" },
+    { "<leader>tn", ":tabn<cr>", desc = "Go to next tab" },
+    { "<leader>to", ":tabnew<cr>", desc = "Open new tab" },
+    { "<leader>tp", ":tabp<cr>", desc = "Go to previous tab" },
+    { "<leader>tx", ":tabclose<cr>", desc = "Close current tab" },
 })
 
-wk.register({
-  ["<leader>s"] = {
-    name = "Splits/window",
-    v = { "<C-w>v", "Split vertically" },
-    h = { "<C-w>s", "Split horizontally" },
-    e = { "<C-w>=", "Equalize all width and height" },
-    x = { ":close<cr>", "Close current split window" },
-    m = { ":MaximizerToggle<cr>", "Maximize current window" },
-  },
+wk.add({
+    { "<leader>s", group = "Splits/window" },
+    { "<leader>se", "<C-w>=", desc = "Equalize all width and height" },
+    { "<leader>sh", "<C-w>s", desc = "Split horizontally" },
+    { "<leader>sm", ":MaximizerToggle<cr>", desc = "Maximize current window" },
+    { "<leader>sv", "<C-w>v", desc = "Split vertically" },
+    { "<leader>sx", ":close<cr>", desc = "Close current split window" },
 })
 
-wk.register({
-  ["<leader>g"] = {
-    name = "Telescope Git",
-    c = { "<cmd>Telescope git_commits<cr>",  "Git commits" },
-    f = { "<cmd>Telescope git_bcommits<cr>", "Git file commits for current file/buffer" },
-    b = { "<cmd>Telescope git_branches<cr>", "Git branches" },
-    s = { "<cmd>Telescope git_status<cr>",   "Git status per file with diff preview" },
-  },
+wk.add({
+    { "<leader>g", group = "Telescope Git" },
+    { "<leader>gb", "<cmd>Telescope git_branches<cr>", desc = "Git branches" },
+    { "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Git commits" },
+    { "<leader>gf", "<cmd>Telescope git_bcommits<cr>", desc = "Git file commits for current file/buffer" },
+    { "<leader>gs", "<cmd>Telescope git_status<cr>", desc = "Git status per file with diff preview" },
 })
 

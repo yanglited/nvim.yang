@@ -11,20 +11,19 @@ return {
                 grep_string = { additional_args = { "--hidden" } },
             },
         })
+
         local wk = require("which-key")
-        wk.register({
-            ["<leader>f"] = {
-                name = "Find ...",
-                f = { ":Telescope find_files<cr>", "Find files" },
-                w = { ":Telescope live_grep<cr>", "Live grep" },
-                h = { ":Telescope help_tags<cr>", "Find help tags" },
-                g = { ":Telescope grep_string<cr>", "Find word under cursor" },
-                i = { ":Telescope git_files<cr>", "Find git files" },
-                e = { ":Telescope help_tags<cr>", "Find help tags" },
-                r = { ":Telescope registers<cr>", "Find registers" },
-                b = { ":Telescope buffers<cr>", "Find buffers" },
-                z = { ":Telescope current_buffer_fuzzy_find<cr>", "Find fuzzy find in current buffer" },
-            },
+        wk.add({
+            { "<leader>f", group = "Find ..." },
+            { "<leader>fb", ":Telescope buffers<cr>", desc = "Find buffers" },
+            { "<leader>fe", ":Telescope help_tags<cr>", desc = "Find help tags" },
+            { "<leader>ff", ":Telescope find_files<cr>", desc = "Find files" },
+            { "<leader>fg", ":Telescope grep_string<cr>", desc = "Find word under cursor" },
+            { "<leader>fh", ":Telescope help_tags<cr>", desc = "Find help tags" },
+            { "<leader>fi", ":Telescope git_files<cr>", desc = "Find git files" },
+            { "<leader>fr", ":Telescope registers<cr>", desc = "Find registers" },
+            { "<leader>fw", ":Telescope live_grep<cr>", desc = "Live grep" },
+            { "<leader>fz", ":Telescope current_buffer_fuzzy_find<cr>", desc = "Find fuzzy find in current buffer" },
         })
     end,
 }

@@ -16,11 +16,10 @@ return {
             },
         })
         local wk = require("which-key")
-        wk.register({
-            ["<leader>n"] = {
-                name = "None-ls Tools",
-                f = { vim.lsp.buf.format, "Format", {} },
-            },
+        wk.add({
+            { "<leader>n", group = "None-ls Tools" },
+            { "<leader>nf", vim.lsp.format, desc = "Format" },
+
         })
     end,
 }
