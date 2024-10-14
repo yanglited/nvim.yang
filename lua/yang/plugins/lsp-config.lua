@@ -33,7 +33,10 @@ return {
                     "shellharden",
                     "cmakelang",
                     "latexindent",
+                    "prettier",
                 },
+                auto_update = true,
+                run_on_start = true,
             })
         end
     },
