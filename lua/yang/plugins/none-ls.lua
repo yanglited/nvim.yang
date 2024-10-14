@@ -18,7 +18,7 @@ return {
         local wk = require("which-key")
         wk.add({
             { "<leader>n", group = "None-ls Tools" },
-            { "<leader>nf", vim.lsp.format, desc = "Format" },
+            { "<leader>nf", vim.lsp.buf.format, desc = "Format" },
 
         })
     end,
