@@ -69,7 +69,7 @@ return {
                     { "<leader>cp", vim.diagnostic.goto_prev, desc = "Previous Diagnostic" },
                     { "<leader>cr", vim.lsp.buf.rename, desc = "Smart rename" },
                     { "<leader>l", group = "Lsp related" },
-                    { "<leader>lc", ":Telescope lsp_incomming_calls<CR>", desc = "Show incoming calls" },
+                    { "<leader>lc", ":Telescope lsp_incoming_calls<CR>", desc = "Show incoming calls" },
                     { "<leader>ld", ":Telescope lsp_definitions<CR>", desc = "Show lsp definitions" },
                     { "<leader>li", ":Telescope lsp_implementations<CR>", desc = "Show lsp implementations" },
                     { "<leader>lo", ":Telescope lsp_outgoing_calls<CR>", desc = "Show outgoing calls" },
