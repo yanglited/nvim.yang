@@ -49,7 +49,6 @@ return {
         },
         config = function()
             local lspconfig = require("lspconfig")
-            lspconfig.lua_ls.setup({})
             local opts = { noremap = true, silent = true }
             -- used to enable autocompletion (assign to every lsp server config)
             local cmp_nvim_lsp = require("cmp_nvim_lsp")
