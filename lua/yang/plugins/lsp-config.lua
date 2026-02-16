@@ -13,7 +13,9 @@ return {
         },
         config = function()
             require("mason-lspconfig").setup({
-                automatic_enable = true,
+                automatic_enable = {
+                    exclude = { "stylua" },
+                },
                 ensure_installed = {
                     "lua_ls",
                     "bashls",
