@@ -26,6 +26,19 @@ return {
 
         -- configure nvim-tree
         nvimtree.setup({
+            filesystem_watchers = {
+                enable = true,
+                debounce_delay = 50,
+                ignore_dirs = {
+                    "/.ccls-cache",
+                    "/build",
+                    "/node_modules",
+                    "/target",
+                    "/.zig-cache",
+                    "/_deps",        -- catches the CMake FetchContent dirs
+                    "/aarchbuild",   -- or ignore the whole build tree
+                },
+            },
             view = {
                 width = 35,
                 relativenumber = true,
