@@ -35,7 +35,6 @@ return {
             require("mason-tool-installer").setup({
                 ensure_installed = {
                     "stylua",
-                    "clang-format",
                     "black",
                     "isort",
                     "shellharden",
