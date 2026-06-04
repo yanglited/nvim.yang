@@ -21,6 +21,7 @@ return {
                 "c",
                 "cpp",
                 "cmake",
+                "proto",
                 "markdown",
                 "markdown_inline",
                 "latex",
