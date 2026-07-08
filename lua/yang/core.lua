@@ -18,3 +18,11 @@ autocmd("TextYankPost", {
     })
   end,
 })
+
+-- Buffers read from stdin (e.g. `cmd | nvim -`) have nothing to save; let :q work
+autocmd("StdinReadPost", {
+  pattern = "*",
+  callback = function()
+    vim.bo.modified = false
+  end,
+})
